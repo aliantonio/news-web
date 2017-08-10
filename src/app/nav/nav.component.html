@@ -1,0 +1,43 @@
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+    aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <a class="navbar-brand" href="#">Menu</a>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="nav-link" routerLink="/" routerLinkActive="active" (click)="query = ''">News</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/worldnews" routerLinkActive="active" (click)="query = ''">World News</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/politics" routerLinkActive="active" (click)="query = ''">Politics</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/njnews" routerLinkActive="active" (click)="query = ''">NJ News</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/espn" routerLinkActive="active" (click)="query = ''">ESPN</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/tech" routerLinkActive="active" (click)="query = ''">Tech</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/android" routerLinkActive="active" (click)="query = ''">Android</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/pallone" routerLinkActive="active" (click)="query = ''">Pallone</a>
+      </li>
+    </ul>
+    <!--
+    <div class="form-inline my-2 my-lg-0">
+      <input name="query" class="form-control searchInput" type="text" #searchInput placeholder="Search" [(ngModel)]="query" (keyup)="getValue($event);" autofocus>
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="query = ''"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+      </span>
+    </div>
+    -->
+  </div>
+</nav>

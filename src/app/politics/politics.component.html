@@ -1,0 +1,22 @@
+<div class="list-group">
+  <div class="input-group">
+    <input type="text" class="form-control search-input" #searchInput name="query" [(ngModel)]="query" placeholder="Search for..." autofocus>
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="button" (click)="query = ''"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+    </span>
+  </div>
+  <a href="{{newsArticle.data.url}}" class="list-group-item slide-left" ng-class="animation" *ngFor="let newsArticle of results | filter : query : 'reddit'" target="_blank">
+    <span class="thumbnail-wrapper">
+      <img *ngIf="newsArticle.data.thumbnail != 'self' || newsArticle.data.thumbnail != 'default'" [src]="newsArticle.data.thumbnail" class="img-thumbnail" />
+    </span>
+    {{newsArticle.data.title}}
+    <span class="description" (click)="openURL(newsArticle.data.permalink);$event.stopPropagation();">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      <span>{{newsArticle.data.score | number:0}}</span>
+      <i class="fa fa-comment" aria-hidden="true"></i>
+      <span>{{newsArticle.data.num_comments | number:0}}</span>
+      <i class="fa fa-star" aria-hidden="true" *ngIf="newsArticle.data.gilded > 0"></i>
+      <span *ngIf="newsArticle.data.gilded > 0">x{{newsArticle.data.gilded}}</span>
+    </span>
+  </a>
+</div>

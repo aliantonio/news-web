@@ -1,6 +1,5 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoadingService } from '../loading.service';
-import { Request, RequestOptions, RequestOptionsArgs, RequestMethod, Headers } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class NjNewsComponent implements OnInit {
 
   results: string[];
+  @ViewChild('searchInput') oElement;
   appendUrl = '?rss_url=http%3A%2F%2Fnewjersey.news12.com%2F%3Fclienttype%3Drss';
 
   constructor(private load: LoadingService, private http: HttpClient) { }
@@ -35,7 +35,8 @@ export class NjNewsComponent implements OnInit {
         console.error('Something went wrong!');
         this.load.hide();
       });
-        
+    // focus on search input
+    this.oElement.nativeElement.focus();
   }
 
 }

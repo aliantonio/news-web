@@ -25,7 +25,6 @@ export class NewsComponent implements OnInit {
       data => {
         console.log('/r/news results', data['data'].children);
         this.results = data['data'].children;
-        console.log(this.oElement.nativeElement.focus());
         this.load.hide();
       },
       // Errors will call this callback instead:
@@ -33,6 +32,8 @@ export class NewsComponent implements OnInit {
         console.error('Something went wrong!');
         this.load.hide();
       });
+    // focus on search input
+    this.oElement.nativeElement.focus();
   }
   
   openURL = function (url) {

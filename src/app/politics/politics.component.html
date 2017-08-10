@@ -7,7 +7,7 @@
   </div>
   <a href="{{newsArticle.data.url}}" class="list-group-item slide-left" ng-class="animation" *ngFor="let newsArticle of results | filter : query : 'reddit'" target="_blank">
     <span class="thumbnail-wrapper">
-      <img *ngIf="newsArticle.data.thumbnail != 'self' || newsArticle.data.thumbnail != 'default'" [src]="newsArticle.data.thumbnail" class="img-thumbnail" />
+      <img *ngIf="newsArticle.data.thumbnail != 'self' && newsArticle.data.thumbnail != 'default'" [src]="newsArticle.data.thumbnail" class="img-thumbnail" />
     </span>
     {{newsArticle.data.title}}
     <span class="description" (click)="openURL(newsArticle.data.permalink);$event.stopPropagation();">

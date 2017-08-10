@@ -1,5 +1,14 @@
-<app-nav></app-nav>
-
-<p>
-  pallone works!
-</p>
+<div class="list-group">
+  <div class="input-group">
+    <input type="text" class="form-control search-input" #searchInput name="query" [(ngModel)]="query" placeholder="Search for..." autofocus>
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="button" (click)="query = ''"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+    </span>
+  </div>
+  <a href="{{newsArticle.link}}" class="list-group-item slide-left" ng-class="animation" *ngFor="let newsArticle of results | filter : query : 'pallone'" target="_blank">
+    {{newsArticle.title}}<br>
+    <span class="description">
+        {{newsArticle.pubDate | dateFormat | date:'MM/dd/yyyy hh:mma' : 'UTC'}}
+    </span>
+  </a>
+</div>

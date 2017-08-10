@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from '../loading.service';
 
@@ -10,6 +10,7 @@ import { LoadingService } from '../loading.service';
 export class WorldNewsComponent implements OnInit {
 
   results: string[];
+  @ViewChild('searchInput') oElement;
 
   constructor(private load: LoadingService, private http: HttpClient) { }
 
@@ -31,6 +32,8 @@ export class WorldNewsComponent implements OnInit {
         console.error('Something went wrong!');
         this.load.hide();
       });
+    // focus on search input
+    this.oElement.nativeElement.focus();
   }
   
   openURL = function (url) {

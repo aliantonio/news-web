@@ -17,6 +17,7 @@ import { AndroidComponent } from './android/android.component';
 import { FilterPipe } from './filter.pipe';
 import { NavComponent } from './nav/nav.component';
 import { LoadingService } from './loading.service';
+import { DateFormatPipe } from './date-format.pipe';
 
 const appRoutes: Routes = [
   {
@@ -65,7 +66,8 @@ const appRoutes: Routes = [
     PalloneComponent,
     AndroidComponent,
     FilterPipe,
-    NavComponent
+    NavComponent,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from '../loading.service';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-world-news',
   templateUrl: './world-news.component.html',
-  styleUrls: ['./world-news.component.css']
+  styleUrls: ['./world-news.component.css'],
+  animations: [
+    trigger('animate-in', [
+      state('in', style({opacity: 1, transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate('0.2s ease-in')
+      ]),
+    ])
+  ]
 })
 export class WorldNewsComponent implements OnInit {
 

@@ -1,11 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoadingService } from '../loading.service';
 import { HttpClient } from '@angular/common/http';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-pallone',
   templateUrl: './pallone.component.html',
-  styleUrls: ['./pallone.component.css']
+  styleUrls: ['./pallone.component.css'],
+  animations: [
+    trigger('animate-in', [
+      state('in', style({opacity: 1, transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate('0.2s ease-in')
+      ]),
+    ])
+  ]
 })
 export class PalloneComponent implements OnInit {
 

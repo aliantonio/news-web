@@ -1,11 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from '../loading.service';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-android',
   templateUrl: './android.component.html',
-  styleUrls: ['./android.component.css']
+  styleUrls: ['./android.component.css'],
+  animations: [
+    trigger('animate-in', [
+      state('in', style({opacity: 1, transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate('0.2s ease-in')
+      ]),
+    ])
+  ]
 })
 export class AndroidComponent implements OnInit {
 

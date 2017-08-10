@@ -5,7 +5,7 @@
       <button class="btn btn-secondary" type="button" (click)="query = ''"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
     </span>
   </div>
-  <a href="{{newsArticle.link}}" class="list-group-item slide-left" ng-class="animation" *ngFor="let newsArticle of results | filter : query: 'espn'" target="_blank">
+  <a href="{{newsArticle.link}}" class="list-group-item slide-left" [@animate-in]="state" *ngFor="let newsArticle of results | filter : query: 'espn'" target="_blank">
     {{newsArticle.title}}
   </a>
 </div>

@@ -5,7 +5,7 @@
       <button class="btn btn-secondary" type="button" (click)="query = ''"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
     </span>
   </div>
-  <a href="{{newsArticle.data.url}}" class="list-group-item slide-left" ng-class="animation" *ngFor="let newsArticle of results | filter : query : 'reddit'" target="_blank">
+  <a href="{{newsArticle.data.url}}" class="list-group-item slide-left" [@animate-in]="state" *ngFor="let newsArticle of results | filter : query : 'reddit'" target="_blank">
     <span class="thumbnail-wrapper">
       <img *ngIf="newsArticle.data.thumbnail != 'self' && newsArticle.data.thumbnail != 'default'" [src]="newsArticle.data.thumbnail" class="img-thumbnail" />
     </span>

@@ -24,7 +24,8 @@ export class PalloneComponent implements OnInit {
 
   results: string[];
   @ViewChild('searchInput') oElement;
-  appendUrl = '?rss_url=https%3A%2F%2Fpallone.house.gov%2Frss.xml'
+  appendUrl = '?rss_url=https%3A%2F%2Fpallone.house.gov%2Frss.xml';
+  query: any;
 
   constructor(private load: LoadingService, private http: HttpClient) { }
 

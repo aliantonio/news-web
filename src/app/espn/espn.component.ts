@@ -25,6 +25,7 @@ export class EspnComponent implements OnInit {
   results: string[];
   @ViewChild('searchInput') oElement;
   appendUrl = '?rss_url=https%3A%2F%2Fespn.go.com%2Fespn%2Frss%2Fnews';
+  query: any;
 
   constructor(private http: HttpClient, private load: LoadingService) { }
 

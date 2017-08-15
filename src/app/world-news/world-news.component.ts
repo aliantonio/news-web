@@ -24,6 +24,7 @@ export class WorldNewsComponent implements OnInit {
 
   results: string[];
   @ViewChild('searchInput') oElement;
+  query: any;
 
   constructor(private load: LoadingService, private http: HttpClient) { }
 

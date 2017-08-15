@@ -25,6 +25,7 @@ export class NjNewsComponent implements OnInit {
   results: string[];
   @ViewChild('searchInput') oElement;
   appendUrl = '?rss_url=http%3A%2F%2Fnewjersey.news12.com%2F%3Fclienttype%3Drss';
+  query: any;
 
   constructor(private load: LoadingService, private http: HttpClient) { }
 

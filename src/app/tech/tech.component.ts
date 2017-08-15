@@ -25,6 +25,7 @@ export class TechComponent implements OnInit {
   results: string[];
   @ViewChild('searchInput') oElement;
   appendUrl = '?rss_url=https%3A%2F%2Ftechcrunch.com%2Ffeed%2F';
+  query: any;
 
   constructor(private load: LoadingService, private http: HttpClient) { }
 

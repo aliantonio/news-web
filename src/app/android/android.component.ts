@@ -52,4 +52,9 @@ export class AndroidComponent implements OnInit {
 
   }
 
+  openUrl = function (url) {
+    var domain = "https://pay.reddit.com";
+    window.open(domain + url);
+  }
+
 }

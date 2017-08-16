@@ -50,7 +50,7 @@ export class PoliticsComponent implements OnInit {
     this.oElement.nativeElement.focus();
   }
   
-  openURL = function (url) {
+  openUrl = function (url) {
     var domain = "https://pay.reddit.com";
     window.open(domain + url);
   }

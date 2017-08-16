@@ -10,7 +10,7 @@
       <img *ngIf="newsArticle.data.thumbnail != 'self' && newsArticle.data.thumbnail != 'default'" [src]="newsArticle.data.thumbnail" class="img-thumbnail" />
     </span>
     {{newsArticle.data.title}}
-    <span class="description" (click)="openURL(newsArticle.data.permalink);$event.stopPropagation();">
+    <span class="description" (click)="openUrl(newsArticle.data.permalink); $event.stopPropagation(); query = ''">
       <i class="fa fa-arrow-up" aria-hidden="true"></i>
       <span>{{newsArticle.data.score | number:0}}</span>
       <i class="fa fa-comment" aria-hidden="true"></i>

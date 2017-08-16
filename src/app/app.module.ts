@@ -52,6 +52,11 @@ const appRoutes: Routes = [
   {
     path: 'pallone',
     component: PalloneComponent
+  },
+  {
+    path: '',
+    redirectTo: '/news',
+    pathMatch: 'full'
   }
 ]
 
@@ -72,7 +77,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {useHash:true}),
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
